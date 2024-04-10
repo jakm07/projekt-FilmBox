@@ -104,3 +104,24 @@ const filmy = [
 		premiera: '2022-12-24',
 	},
 ]
+
+const filmID = location.hash.slice(1)
+const findfilm = filmy.find(film => film.id === filmID)
+
+const detailFilmu = document.getElementById("detail-filmu")
+
+const nazev = detailFilmu.querySelector(".card-title")
+const plakat = detailFilmu.querySelector(".img-fluid")
+const popis = detailFilmu.querySelector(".card-text")
+
+nazev.textContent = findfilm.nazev
+plakat.src = findfilm.plakat.url
+popis.textContent = findfilm.popis
+
+
+
+
+
+
+
+
