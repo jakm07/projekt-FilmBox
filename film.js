@@ -118,6 +118,23 @@ nazev.textContent = findfilm.nazev
 plakat.src = findfilm.plakat.url
 popis.textContent = findfilm.popis
 
+const poznamka = document.querySelector("#note-form")
+const btn = document.querySelector("#note-form button")
+
+btn.addEventListener("click", (event) => {
+	const poznamkaInput = document.querySelector("#message-input")
+	const checkbox = document.querySelector("#terms-checkbox")
+	if(poznamkaInput.value.length === 0){
+		poznamkaInput.classList.add("is-invalid")
+	}else if(!checkbox.checked){
+		poznamkaInput.classList.remove("is-invalid")
+		checkbox.classList.add("is-invalid")
+	}
+	else{
+		poznamka.innerHTML = `<p class="card-text">${poznamkaInput.value}</p>`
+}
+})
+
 
 
 
